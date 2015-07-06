@@ -6,6 +6,7 @@ module.exports = function (grunt) {
 		handlebars : {
 			compile : {
 				options : {
+					commonjs : true,
 					processName : function (name) {
 						return name.replace("templates/", "").replace(".hbs", "");
 					}

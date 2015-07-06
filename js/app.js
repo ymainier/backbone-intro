@@ -1,6 +1,8 @@
 var Backbone = require("backbone");
 var _ = require("underscore");
 var $ = require("jquery");
+var Handlebars = require("handlebars");
+var JST = require("./templates")(Handlebars);
 
 var PoiModel = Backbone.Model.extend({});
 var PoiCollection = Backbone.Collection.extend({
