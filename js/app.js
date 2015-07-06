@@ -1,3 +1,7 @@
+var Backbone = require("backbone");
+var _ = require("underscore");
+var $ = require("jquery");
+
 var PoiModel = Backbone.Model.extend({});
 var PoiCollection = Backbone.Collection.extend({
   model: PoiModel
@@ -45,14 +49,14 @@ var Router = Backbone.Router.extend({
   home: function() {
     var homeView = new HomeView();
     homeView.render();
-    $('#container').html(homeView.el)
+    $('#container').html(homeView.el);
     console.log("home route");
   },
 
   about: function() {
     var aboutView = new AboutView();
     aboutView.render();
-    $('#container').html(aboutView.el)
+    $('#container').html(aboutView.el);
     console.log("about route");
   },
 
@@ -61,7 +65,7 @@ var Router = Backbone.Router.extend({
       collection: poiCollection
     });
     poiCollectionView.render();
-    $('#container').html(poiCollectionView.el)
+    $('#container').html(poiCollectionView.el);
     console.log("poisIndex route");
   },
   poisShow: function(id) {
@@ -72,7 +76,7 @@ var Router = Backbone.Router.extend({
       model: model
     });
     poiModelView.render();
-    $('#container').html(poiModelView.el)
+    $('#container').html(poiModelView.el);
     console.log("poisShow route " + id);
   },
 });
@@ -84,3 +88,5 @@ Handlebars.registerHelper('stars', function(count) {
 	});
   return new Handlebars.SafeString(stars);
 });
+
+module.exports.Router = Router;
