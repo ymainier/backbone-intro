@@ -104,8 +104,3 @@ Handlebars.registerHelper('stars', function(count) {
 	});
   return new Handlebars.SafeString(stars);
 });
-
-$(function() {
-  new Router();
-  Backbone.history.start();
-});
