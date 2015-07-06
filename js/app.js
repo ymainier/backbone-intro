@@ -98,10 +98,10 @@ var Router = Backbone.Router.extend({
 });
 
 Handlebars.registerHelper('stars', function(count) {
-  var stars = "", i;
-  for (i = 0; i < count; i++) {
+  var stars = "";
+	_.times(count, function () {
     stars += "&#9733;";
-  }
+	});
   return new Handlebars.SafeString(stars);
 });
 
