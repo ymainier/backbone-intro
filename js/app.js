@@ -5,45 +5,25 @@ var PoiCollection = Backbone.Collection.extend({
 
 var HomeView = Backbone.View.extend({
   render: function() {
-    // 1. Récupérer le contenu du template
-    var template = $('#template-home').html();
-    // 2. Le compiler en html
-    var html = Handlebars.compile(template);
-    // 3. L'insérer dans le DOM
-    this.$el.html(html);
+    this.$el.html(JST["home"]);
   }
 });
 
 var AboutView = Backbone.View.extend({
   render: function() {
-    // 1. Récupérer le contenu du template
-    var template = $('#template-about').html();
-    // 2. Le compiler en html
-    var html = Handlebars.compile(template);
-    // 3. L'insérer dans le DOM
-    this.$el.html(html);
+    this.$el.html(JST["about"]);
   }
 });
 
 var PoiCollectionView = Backbone.View.extend({
   render: function() {
-    // 1. Récupérer le contenu du template
-    var template = $('#template-pois-index').html();
-    // 2. Le compiler en html
-    var html = Handlebars.compile(template);
-    // 3. L'insérer dans le DOM
-    this.$el.html(html({models: this.collection.toJSON()}));
+    this.$el.html(JST["pois/index"]({models: this.collection.toJSON()}));
   }
 });
 
 var PoiModelView = Backbone.View.extend({
   render: function() {
-    // 1. Récupérer le contenu du template
-    var template = $('#template-pois-show').html();
-    // 2. Le compiler en html
-    var html = Handlebars.compile(template);
-    // 3. L'insérer dans le DOM
-    this.$el.html(html(this.model.toJSON()));
+    this.$el.html(JST["pois/show"](this.model.toJSON()));
   }
 });
 

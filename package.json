@@ -1,0 +1,22 @@
+{
+  "name": "backbone-intro",
+  "version": "1.0.0",
+  "description": "An introduction to backbone",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ymainier/backbone-intro.git"
+  },
+  "keywords": [
+    "backbone"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ymainier/backbone-intro/issues"
+  },
+  "homepage": "https://github.com/ymainier/backbone-intro",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-handlebars": "^0.10.2"
+  }
+}

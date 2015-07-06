@@ -11,40 +11,10 @@
 
 		<script src="js/jquery.js"></script>
 		<script src="js/underscore.js"></script>
-		<script src="js/handlebars.js"></script>
+		<script src="node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/handlebars.runtime.min.js"></script>
+		<script src="js/templates.js"></script>
 		<script src="js/backbone.js"></script>
 		<script src="js/app.js"></script>
-
-		<!-- Templates -->
-		<script id="template-home" type="text/x-handlebars-template">
-<h1>Backbone introduction</h1>
-<p>A quick introduction to a popular javascript MVC library</p>
-<a href="#about">About</a>
-<a href="#pois">Pois</a>
-		</script>
-		<script id="template-about" type="text/x-handlebars-template">
-<h1>Alors la, c'est la page about</h1>
-<p>Il y a plein d'info utile, c'est génial.</p>
-<a href="#">Home</a>
-<a href="#pois">Pois</a>
-		</script>
-		<script id="template-pois-index" type="text/x-handlebars-template">
-<h1>Nos points d'intérêts</h1>
-<ul>
-{{#each models}}
-	<li><a href="#pois/{{id}}">{{name}}</a></li>
-{{/each}}
-</ul>
-<a href="#">Home</a>
-<a href="#about">About</a>
-		</script>
-		<script id="template-pois-show" type="text/x-handlebars-template">
-<h1>{{name}}</h1>
-<p>{{stars cotation}}</p>
-<a href="#">Home</a>
-<a href="#pois">Pois</a>
-<a href="#about">About</a>
-		</script>
 
 		<script>
 		document.addEventListener("DOMContentLoaded", function () {
