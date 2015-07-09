@@ -8,18 +8,18 @@ module.exports = function (grunt) {
 				options : {
 					commonjs : true,
 					processName : function (name) {
-						return name.replace("templates/", "").replace(".hbs", "");
+						return name.replace("app/templates/", "").replace(".hbs", "");
 					}
 				},
-				src : "templates/**/*.hbs",
-				dest : "js/templates.js"
+				src : "app/templates/**/*.hbs",
+				dest : "app/templates.js"
 			}
 		},
 
 		browserify : {
 			app : {
-				src : ['./js/application.js'],
-				dest : "./dist/application.js"
+				src : ['./app/app.js'],
+				dest : "./dist/app.js"
 			}
 		}
 	});

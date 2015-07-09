@@ -1,37 +1,10 @@
 var Backbone = require("backbone");
-var _ = require("underscore");
 var $ = require("jquery");
-var Handlebars = require("handlebars");
-var JST = require("./templates")(Handlebars);
-
-var PoiModel = Backbone.Model.extend({});
-var PoiCollection = Backbone.Collection.extend({
-  model: PoiModel
-});
-
-var HomeView = Backbone.View.extend({
-  render: function() {
-    this.$el.html(JST["home"]);
-  }
-});
-
-var AboutView = Backbone.View.extend({
-  render: function() {
-    this.$el.html(JST["about"]);
-  }
-});
-
-var PoiCollectionView = Backbone.View.extend({
-  render: function() {
-    this.$el.html(JST["pois/index"]({models: this.collection.toJSON()}));
-  }
-});
-
-var PoiModelView = Backbone.View.extend({
-  render: function() {
-    this.$el.html(JST["pois/show"](this.model.toJSON()));
-  }
-});
+var PoiCollection = require("./collections/pois");
+var HomeView = require("./views/home");
+var AboutView = require("./views/about");
+var PoiCollectionView = require("./views/pois/index");
+var PoiModelView = require("./views/pois/show");
 
 var poiCollection = new PoiCollection([
   {id: 1, name: "Tour Eiffel", cotation: 3},
@@ -40,7 +13,7 @@ var poiCollection = new PoiCollection([
   {id: 4, name: "Musée français de la Carte à Jouer", cotation: 1}
 ]);
 
-var Router = Backbone.Router.extend({
+module.exports = Backbone.Router.extend({
   routes: {
     "": "home",
     "about": "about",
@@ -83,12 +56,3 @@ var Router = Backbone.Router.extend({
   },
 });
 
-Handlebars.registerHelper('stars', function(count) {
-  var stars = "";
-	_.times(count, function () {
-    stars += "&#9733;";
-	});
-  return new Handlebars.SafeString(stars);
-});
-
-module.exports.Router = Router;
