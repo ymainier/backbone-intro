@@ -49,6 +49,6 @@ module.exports = Backbone.Router.extend({
 		this.renderBaseRoute(PoiModelView, {
 			model: model
 		});
-	},
+	}
 });
 

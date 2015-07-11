@@ -3,8 +3,8 @@ var Handlebars = require("handlebars");
 var JST = require("../../templates")(Handlebars);
 
 module.exports = Backbone.View.extend({
-  render: function() {
-    this.$el.html(JST["pois/index"]({models: this.collection.toJSON()}));
-  }
+	render: function() {
+		this.$el.html(JST["pois/index"]({models: this.collection.toJSON()}));
+	}
 });
 

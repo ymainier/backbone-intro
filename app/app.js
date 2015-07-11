@@ -5,11 +5,11 @@ var $ = require("jquery");
 var Router = require("./router");
 
 Handlebars.registerHelper('stars', function(count) {
-  var stars = "";
+	var stars = "";
 	_.times(count, function () {
-    stars += "&#9733;";
+		stars += "&#9733;";
 	});
-  return new Handlebars.SafeString(stars);
+	return new Handlebars.SafeString(stars);
 });
 
 $(function () {
